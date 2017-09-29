@@ -1,0 +1,30 @@
+{
+  "name": "polite-fetch",
+  "version": "0.0.1",
+  "description": "Modifies node-fetch to limit the rate of requests to the same host",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepare": "yarn run build",
+    "lint": "eslint ./src"
+  },
+  "files": [
+    "lib/index.js"
+  ],
+  "main": "lib/index.js",
+  "repository": "https://github.com/gwylim/polite-fetch",
+  "author": "Gwylim Ashley",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.6.0"
+  },
+  "dependencies": {
+    "node-fetch": "^1.7.3",
+    "sleep-promise": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=7.10.1"
+  }
+}
