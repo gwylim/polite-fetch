@@ -10,7 +10,7 @@ let delay = 1000;
 async function fetch(uri, init) {
   const host = new URL(uri).host;
   const currentTime = Date.now();
-  const fetchTime = nextFetchTime.get(host) || currentTime;
+  const fetchTime = Math.max(nextFetchTime.get(host) || 0, currentTime);
   nextFetchTime.set(host, fetchTime + delay);
   if (fetchTime > currentTime) {
     await sleep(fetchTime - currentTime);
